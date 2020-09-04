@@ -1,0 +1,27 @@
+.header-root {
+  display: flex;
+  height: 200px;
+}
+
+.header-root .header-left {
+  width: 30%;
+}
+
+.header-root .header-right {
+  width: 70%;
+}
+
+.header-component {
+  width: 80px;
+  height: 50px;
+}
+
+.header-img {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+.header-text {
+  font-size: 14px;
+  font-family: "Meiryo UI";
+}

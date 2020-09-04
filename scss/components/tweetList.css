@@ -1,0 +1,156 @@
+.parent-tweetlist {
+  max-width: 100%;
+  border: solid 1px;
+  border-radius: 0.5em;
+  border-color: gainsboro;
+  display: flex;
+}
+
+.parent-tweetlist:hover {
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.list-left {
+  max-width: 50px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+.list-left .image {
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 50px;
+  box-shadow: 0 0px 3px 0 black;
+}
+
+.list-left .image-label {
+  font-size: small;
+}
+
+.list-right {
+  max-width: 70%;
+  margin-left: 5%;
+}
+
+.list-right .name-root {
+  max-height: 30px;
+  display: flex;
+  margin-top: 5px;
+}
+
+.list-right .name-label {
+  display: inline-block;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-style: normal;
+  color: #14171a;
+}
+
+.list-right .name-text {
+  margin-left: 20px;
+  font-family: "Meiryo";
+  font-style: normal;
+  color: #657786;
+  font-weight: 400;
+}
+
+.list-right .category {
+  font-size: 10px;
+}
+
+.list-right .tweet {
+  font-size: 17px;
+  word-wrap: break-word;
+  font-family: "Segoe UI";
+  font-weight: 400;
+}
+
+.list-right .tweet-title {
+  font-size: 13px;
+  font-family: "Meiryo UI";
+  font-weight: 500;
+  display: inline-block;
+  color: darkgray;
+}
+
+.list-right .text {
+  font-size: 17px;
+  word-wrap: break-word;
+  font-family: "Segoe UI";
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.list-right .text .text-title {
+  font-size: 13px;
+  font-family: "Meiryo UI";
+  font-weight: 500;
+  display: inline-block;
+  color: darkgray;
+}
+
+.list-right .bottom-root .bottom {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+
+.list-right .bottom-root .bottom .share-button {
+  height: 32px;
+  width: 55.3px;
+  border: solid 1px;
+  border-radius: 0.5em;
+  border-color: gainsboro;
+  background-color: #1976d2;
+}
+
+.list-right .bottom-root .bottom .fav {
+  margin-left: 10px;
+  display: flex;
+}
+
+.list-right .bottom-root .bottom .fav .icon {
+  width: 30px;
+  max-height: 30px;
+  border: solid 1px;
+  border-radius: 0.5em;
+  border-color: gainsboro;
+  background-color: #FF0099;
+}
+
+.list-right .bottom-root .bottom .fav .counter {
+  text-align: center;
+  padding-top: 6px;
+  font-size: 9px;
+}
+
+.list-right .bottom-root .bottom .nonfav {
+  margin-left: 10px;
+  display: flex;
+}
+
+.list-right .bottom-root .bottom .nonfav .icon {
+  width: 30px;
+  max-height: 30px;
+  border: solid 1px;
+  border-radius: 0.5em;
+  border-color: gainsboro;
+  background-color: #FF0099;
+}
+
+.list-right .bottom-root .bottom .nonfav .counter {
+  text-align: center;
+  padding-top: 6px;
+  font-size: 9px;
+}
+
+.list-right .bottom-root .bottom .created {
+  margin-left: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: "Meiryo";
+  font-size: 11px;
+}
