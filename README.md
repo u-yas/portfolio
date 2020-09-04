@@ -26,6 +26,7 @@ VercelとNext.jsの組み合わせはFirebaseより簡単にホスティング�
 (Firestoreからデータを受ける処理は作成中)以下、仮作成したJSONファイルをもとにした検索結果画面の例
 ![](./static/ツイートリスト.PNG)
 - Twitterログインボタン、ログアウトボタンは作成完了
+
 ![](./static/buttonPNG.PNG)
 - Twitterログインボタンを押したとき、FirebaseのAuth機能でツイッター認証を行う機能完了、その時、OAuth Tokenを受け取り、ログインが完了した瞬間にfetch apiにてネットワーククエストを送信、リクエストを受け取ったサーバー(Vercelのサーバーレス関数(pages/apiディレクトリ)にあるNode.js)にてTwitter apiを利用、認証をした本人のTweetデータを取得するためのHTTPリクエストを贈り、その結果となるJSONファイルを受け取って、そのデータをクライアント側にレスポンスするところまでは完了
 
