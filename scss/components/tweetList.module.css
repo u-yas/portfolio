@@ -1,4 +1,4 @@
-.parent-tweetlist {
+.parentTweetlist {
   max-width: 100%;
   border: solid 1px;
   border-radius: 0.5em;
@@ -6,11 +6,11 @@
   display: flex;
 }
 
-.parent-tweetlist:hover {
+.parentTweetlist:hover {
   box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
-.list-left {
+.listLeft {
   max-width: 50px;
   margin-left: 20px;
   padding-top: 10px;
@@ -19,29 +19,29 @@
   text-align: center;
 }
 
-.list-left .image {
+.listLeft .image {
   border-radius: 50%;
   max-width: 100%;
   max-height: 50px;
   box-shadow: 0 0px 3px 0 black;
 }
 
-.list-left .image-label {
+.listLeft .imageLabel {
   font-size: small;
 }
 
-.list-right {
+.listRight {
   max-width: 70%;
   margin-left: 5%;
 }
 
-.list-right .name-root {
+.listRight .nameRoot {
   max-height: 30px;
   display: flex;
   margin-top: 5px;
 }
 
-.list-right .name-label {
+.listRight .nameLabel {
   display: inline-block;
   font-family: "Segoe UI";
   font-weight: 700;
@@ -49,7 +49,7 @@
   color: #14171a;
 }
 
-.list-right .name-text {
+.listRight .nameText {
   margin-left: 20px;
   font-family: "Meiryo";
   font-style: normal;
@@ -57,18 +57,18 @@
   font-weight: 400;
 }
 
-.list-right .category {
+.listRight .category {
   font-size: 10px;
 }
 
-.list-right .tweet {
+.listRight .tweet {
   font-size: 17px;
   word-wrap: break-word;
   font-family: "Segoe UI";
   font-weight: 400;
 }
 
-.list-right .tweet-title {
+.listRight .tweetTitle {
   font-size: 13px;
   font-family: "Meiryo UI";
   font-weight: 500;
@@ -76,7 +76,7 @@
   color: darkgray;
 }
 
-.list-right .text {
+.listRight .text {
   font-size: 17px;
   word-wrap: break-word;
   font-family: "Segoe UI";
@@ -84,7 +84,7 @@
   margin-bottom: 10px;
 }
 
-.list-right .text .text-title {
+.listRight .text .textTitle {
   font-size: 13px;
   font-family: "Meiryo UI";
   font-weight: 500;
@@ -92,13 +92,13 @@
   color: darkgray;
 }
 
-.list-right .bottom-root .bottom {
+.listRight .bottomRoot .bottom {
   padding-bottom: 10px;
   padding-left: 10px;
   display: flex;
 }
 
-.list-right .bottom-root .bottom .share-button {
+.listRight .bottomRoot .bottom .shareButton {
   height: 32px;
   width: 55.3px;
   border: solid 1px;
@@ -107,12 +107,12 @@
   background-color: #1976d2;
 }
 
-.list-right .bottom-root .bottom .fav {
+.listRight .bottomRoot .bottom .fav {
   margin-left: 10px;
   display: flex;
 }
 
-.list-right .bottom-root .bottom .fav .icon {
+.listRight .bottomRoot .bottom .fav .icon {
   width: 30px;
   max-height: 30px;
   border: solid 1px;
@@ -121,18 +121,18 @@
   background-color: #FF0099;
 }
 
-.list-right .bottom-root .bottom .fav .counter {
+.listRight .bottomRoot .bottom .fav .counter {
   text-align: center;
   padding-top: 6px;
   font-size: 9px;
 }
 
-.list-right .bottom-root .bottom .nonfav {
+.listRight .bottomRoot .bottom .nonfav {
   margin-left: 10px;
   display: flex;
 }
 
-.list-right .bottom-root .bottom .nonfav .icon {
+.listRight .bottomRoot .bottom .nonfav .icon {
   width: 30px;
   max-height: 30px;
   border: solid 1px;
@@ -141,13 +141,13 @@
   background-color: #FF0099;
 }
 
-.list-right .bottom-root .bottom .nonfav .counter {
+.listRight .bottomRoot .bottom .nonfav .counter {
   text-align: center;
   padding-top: 6px;
   font-size: 9px;
 }
 
-.list-right .bottom-root .bottom .created {
+.listRight .bottomRoot .bottom .created {
   margin-left: 30px;
   margin-top: auto;
   margin-bottom: auto;

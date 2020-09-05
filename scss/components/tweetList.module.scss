@@ -1,5 +1,5 @@
 
-.parent-tweetlist {
+.parentTweetlist {
         //全体
         max-width: 100%;
         border: solid 1px;
@@ -20,7 +20,7 @@
 
 
 
-.list-left{
+.listLeft{
     max-width: 50px;
     //twitter プロフ画像
     // grid-area: 1 / 1 / 3 / 3;
@@ -35,15 +35,15 @@
     max-height: 50px;
     box-shadow: 0 0px 3px 0 rgb(0, 0, 0);
     }
-    .image-label{
+    .imageLabel{
         font-size: small;
     }
     
 }
-.list-right{
+.listRight{
     max-width: 70%;
     margin-left:5%;
-    .name-root{
+    .nameRoot{
         //id
         // grid-area: 1 / 3 / 2 / 10;
         // display: grid;
@@ -56,7 +56,7 @@
         margin-top:5px;
 
     }
-    .name-label{
+    .nameLabel{
         // grid-area:1 / 1 / 2 / 3;
         display:inline-block;
         font-family:"Segoe UI";
@@ -64,7 +64,7 @@
         font-style: normal;
         color: #14171a;
     }
-    .name-text{
+    .nameText{
         // grid-area: 1 / 3 / 2 / 8;
         margin-left: 20px;
         font-family: "Meiryo";
@@ -81,7 +81,7 @@
         font-family: "Segoe UI";
         font-weight: 400;
     }
-    .tweet-title{
+    .tweetTitle{
         font-size:13px;
         font-family: "Meiryo UI";
         font-weight: 500;
@@ -95,7 +95,7 @@
         font-family: "Segoe UI";
         font-weight: 400;
         margin-bottom:10px;
-        .text-title{
+        .textTitle{
             font-size:13px;
             font-family: "Meiryo UI";
             font-weight: 500;
@@ -104,7 +104,7 @@
         }
     }
     
-    .bottom-root{
+    .bottomRoot{
         //ファボ、nonファボ
         // grid-area: 3 / 3 / 4 / 10;
         .bottom{
@@ -116,7 +116,7 @@
             // grid-template-rows: 1fr;
             // grid-column-gap: 0px;
             // grid-row-gap: 0px;
-            .share-button{
+            .shareButton{
                 
                 height: 32px;
                 width: 55.3px;

@@ -1,12 +1,8 @@
 import React, { Props, useState } from 'react'
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
-import firestore from 'firebase/firestore'
-import { makeStyles, createStyles, Theme } from '@material-ui/core'
 import ShareIcon from '@material-ui/icons/Share'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-
+import styles from '../scss/components/tweetList.module.scss';
 
 //JSONを受け取ったらそのjsonの一つを
 export type testJson={
@@ -59,50 +55,50 @@ export default function Tweet(Props:testJson):JSX.Element{
         const created = tweetInfo.createdAt;
 
         return(
-            <div className="parent-tweetlist">
-                <div className="list-left">
+            <div className={styles.parentTweetlist}>
+                <div className={styles.listLeft}>
                     {/* 画像の部分の情報はまだ作成中なのできちんと表示されるかだけの確認 */}
-                    <img className="image" src="../static/twittericon13.png" />
+                    <img className={styles.image} src="../static/twittericon13.png" />
                     被害者
                 </div>
 
-                <div className="list-right">
-                    <div className="name-root">
-                        <div className="name-label">@{twitterId}</div>
-                        <div className="name-text">{category}</div>
+                <div className={styles.listRight}>
+                    <div className={styles.nameRoot}>
+                        <div className={styles.nameLabel}>@{twitterId}</div>
+                        <div className={styles.nameText}>{category}</div>
                     </div>
-                    <div className="tweet">
-                        <div className="tweet-title">
+                    <div className={styles.tweet}>
+                        <div className={styles.tweetTitle}>
                             ツイート
                         </div>
                         <br />{tweet}
                     </div>
-                    <div className="text" >
-                        <div className="text-title">届いたクソリプ</div>
+                    <div className={styles.text} >
+                        <div className={styles.textTitle}>届いたクソリプ</div>
                         <br />{text}
                     </div>
-                    <div className="bottom-root">
-                        <div className="bottom">
-                            <div className="share-button">
+                    <div className={styles.bottomRoot}>
+                        <div className={styles.bottom}>
+                            <div className={styles.shareButton}>
                                 <ShareIcon fontSize="default" style={{color:"white",paddingLeft:"25%",paddingTop:"4%"}}/>
                             </div>
-                            <div className="fav">
-                                <div className="icon">
+                            <div className={styles.fav}>
+                                <div className={styles.icon}>
                                     <ThumbUpIcon fontSize="small" style={{color:"white",paddingLeft:"5px",paddingTop:"3px"}} />
                                 </div>
-                                <div className="counter">
+                                <div className={styles.counter}>
                                     {fav}
                                 </div>
                             </div>
-                            <div className="nonfav">
-                                <div className="icon">
+                            <div className={styles.nonfav}>
+                                <div className={styles.icon}>
                                     <ThumbDownIcon fontSize="small" style={{color:"white",paddingLeft:"5px",paddingTop:"3px"}} />
                                 </div>
-                                <div className="counter">
+                                <div className={styles.counter}>
                                     {nonfav}
                                 </div>
                             </div>
-                            <div className="created">
+                            <div className={styles.created}>
                             登録日<br />{created}
                             </div>
                         </div>

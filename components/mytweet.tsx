@@ -10,9 +10,23 @@ type Prop = {
 
 
 
-
-
 export default  function Mytweet(prop:Prop) {
+    // [   
+    //     {
+    //         "a":1,
+    //         "b":{
+    //             "c":"hoge"
+    //         }
+    //     },
+    //     {
+    //         "a":20,
+    //         "b":{
+    //             "c":"fuga"
+    //         }
+    //     }
+    // ]
+    // のとき、"a":1がほしければ、json[0]["a"]
+    // "b":{"c":"fuga"}がほしいとき、json[1]["b"]["c"]
     const toJson = JSON.parse(prop.stringifyJson);
     console.log("始める")
     let count = 0;

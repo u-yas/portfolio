@@ -4,10 +4,10 @@ import firebaseApp from 'firebase/app';
 import  UserContextComp, { useUser }  from '../context/userContext';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { Icon, Button, makeStyles } from '@material-ui/core';
-import firebase from '../firebase/clientApp'
+import firebase from '../firebase/clientApp';
+import styles from '../scss/header.module.scss';
 
 
-// ページごとに違うコンテンツを乗っける。（ログインしてなければログインボタンを乗っける）
 // Propでそれを用意して受け取れるようにする
 
 type contents = {
@@ -26,16 +26,16 @@ export default function Header(props:contents){
     }
 
     return(
-        <div className="header-root">
-            <div className="header-left">
-                    <img  className="header-img" src="../static/idcd3C87_400x400.png" />
-                <div className="header-component">
+        <div className={styles.headerRoot}>
+            <div className={styles.headerLeft}>
+                    <img  className={styles.headerImg} src="../static/idcd3C87_400x400.png" />
+                <div className={styles.headerComponent}>
                     {/* 　受け取ったpropsの中身のコンポーネントがnullならレンダリングしない　*/}
                     {props.component==null ? null:props.component}
                 </div>
             </div>
-            <div className="header-right">
-                <div className="header-text">
+            <div className={styles.headerRight}>
+                <div className={styles.headerText}>
                     {props.text}
                 </div>
             </div>

@@ -30,7 +30,7 @@ yarn-error.log*
 # vercelg
 .vercel
 .env.local
-static
+
 pom.json
 peke.json
 firestore.json
