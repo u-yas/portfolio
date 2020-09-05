@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/router'
 import firebase from '../../firebase/clientApp'
-import Tweet, {receiveJson,testJson} from '../../components/tweetList';
+import SearchedList, {receiveJson,testJson} from '../../components/searchedList';
 import json from '../../firestore.json';
 import Menubar from '../../components/menubar';
 import SearchField from '../../components/searchField';
@@ -22,22 +22,22 @@ type searchTags = {
 export default function SearchIDs(){
     //firestoreからツイートデータを引っ張ってくる
 
-    // const [state,setState] = useState({list:[]});
-    // async function getDatas () {
-    //     const db = firebase.firestore();
-    //     const tags:searchTags = Search();
-    //     const tweetRef = db.collection("tweets")
-    //                     .where("category","==", tags.category )
-    //                     .where("createdAt","<=", tags.since)
-    //                     .where("createdAt",">=", tags.until)
-    //                     .orderBy('createdAt','desc')
-    //                     .limit(20);
-    //     const snapshots = await tweetRef.get();
-    //     const docs = snapshots.docs.map(doc=>doc.data());
-    //     await setState({
-    //         list:docs,
-    //     });
-    // }
+    const [state,setState] = useState({list:[]});
+    async function getDatas () {
+        const db = firebase.firestore();
+        const tags:searchTags = Search();
+        const tweetRef = db.collection("tweets")
+                        .where("category","==", tags.category )
+                        .where("createdAt","<=", tags.since)
+                        .where("createdAt",">=", tags.until)
+                        .orderBy('createdAt','desc')
+                        .limit(20);
+        const snapshots = await tweetRef.get();
+        const docs = snapshots.docs.map(doc=>doc.data());
+        await setState({
+            list:docs,
+        });
+    }
 
     
     const tweetJsons:receiveJson = json
@@ -57,7 +57,7 @@ export default function SearchIDs(){
                 <ul style={{listStyle: "none"}} className="ul-remove-space">
                     {/* jsxのリストを全列挙 */}
                     {toTestJsons.map((item,id):JSX.Element=>{
-                       return <li  onClick={()=>console.log("idは"+item.id)}><Tweet key={id} tweetListData={item}/></li>
+                       return <li  onClick={()=>console.log("idは"+item.id)}><SearchedList key={id} tweetListData={item}/></li>
                     })}
                 </ul>
                 

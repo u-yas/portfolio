@@ -31,7 +31,7 @@ export type receiveJson={
     }[];
 }
 // const icon = require('../images/idcd3C87_400x400.png');
-export default function Tweet(Props:testJson):JSX.Element{
+export default function SearchedList(Props:testJson):JSX.Element{
         // JSON データの多重配列になっているもののいち要素を受け取る
         // Mapの個要素
         // 例

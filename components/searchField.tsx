@@ -74,8 +74,8 @@ export default function SearchField(){
                             <MenuItem value="jibungatari">
                                 自分語り
                             </MenuItem>
-                            <MenuItem value="majikichi">
-                                マジキチ
+                            <MenuItem value="kichigai">
+                                キチガイ
                             </MenuItem>
                         </TextField>
                     </div>
