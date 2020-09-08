@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import firebase from '../firebase/clientApp.js'
 import Menubar from '../components/menubar';
 import LoginWithTwitter from '../components/loginWithTwitter';
-import Mytweet from '../components/mytweet';
+import Mytweets from './mytweets';
 import LogoutWithTwitter from '../components/logoutWithTwitter';
+import { useRouter } from 'next/router'
+
 // ツイッターでログインするページ
 // トップ部分に紹介機能を見せる。
 // あなたは今ログインしてるかどうかを教える
 // ログインしてる状態だったら
 
 export default function Registry() {
-
+    const router = useRouter();
     const[stringifyJson,setStringifyJson] = useState("");
     const [auth,setAuth] = useState(false);//認証に成功したかどうかの判定
     firebase.auth().onAuthStateChanged(function(users){
@@ -32,16 +34,15 @@ export default function Registry() {
     }
     async function fetchTwitter(json):Promise<any>{
       ///　pages/api/tweets/get.tsにTwitter apiをリクエストしてその結果をもらう          
-      await fetch('http://localhost:3000/api/tweets/getMyTweets', {
+      await fetch('http://localhost:3000/api/auth/setRegistry', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
           },
           body: JSON.stringify(json),
         })
-        .then(response=>response.json())
+        .then(()=>router.push('/mytweets'))
         //文字列にしたJSONをhooksに送る
-        .then(json=>setStringifyJson(JSON.stringify(json)))
         .catch(error=>console.log(`${error}`));
     }
     
@@ -69,9 +70,6 @@ export default function Registry() {
         {auth?
           <div className="main" onClick={()=>{setAuth(false);logout();}}>
             <LogoutWithTwitter />
-            {
-              stringifyJson!=''?<Mytweet stringifyJson={stringifyJson} />:null
-            }
           </div>:
           <div className="main" onClick={()=>{setAuth(true);login();}}>
             <LoginWithTwitter />

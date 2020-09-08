@@ -5,7 +5,7 @@ import { useUser } from '../context/userContext'
 import Link from 'next/link'
 import Menubar from '../components/menubar'
 import SearchField from '../components/searchField'
-import Tweet from '../components/tweetList'
+import Tweet from '../components/searchedList'
 import tweetJson from '../firestore.json'
 //home画面、クソツイを登録するボタン、クソツイを閲覧する画面
 
