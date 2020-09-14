@@ -1,13 +1,14 @@
 import React from 'react';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import { Button } from '@material-ui/core';
-import firebase from '../firebase/clientApp'
-
+import styles from '../scss/components/loginWithTwitter.module.scss';
+import firebase from '../firebase/clientApp';
+import {FaTwitter} from 'react-icons/fa';
 export default function LoginWithTwitter():JSX.Element{
 
     return(
-        <div>
-                <Button variant="contained" color="primary"  endIcon={<TwitterIcon></TwitterIcon>}>Twitterからログイン</Button>
+        <div className={styles.buttonRoot}>
+            <div className={styles.twitter}>
+                <FaTwitter size='1.1em' className={styles.icon} />Twitterからログイン
+            </div>
         </div>
     );
 }

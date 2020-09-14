@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import firebase from '../firebase/clientApp.js'
+import firebase from '../firebase/clientApp'
 import Menubar from '../components/menubar';
 import LoginWithTwitter from '../components/loginWithTwitter';
 import Mytweets from './mytweets';
@@ -41,9 +41,9 @@ export default function Registry() {
           },
           body: JSON.stringify(json),
         })
-        .then(()=>router.push('/mytweets'))
         //文字列にしたJSONをhooksに送る
         .catch(error=>console.log(`${error}`));
+        router.push('/mytweets')
     }
     
     function login(){
@@ -75,9 +75,9 @@ export default function Registry() {
             <LoginWithTwitter />
           </div>
         }
-        <footer>
+        <div className="footer">
             <Menubar></Menubar>
-        </footer>
+        </div>
       </div>
     );
 }

@@ -1,25 +1,26 @@
 import {NowRequest, NowResponse} from '@vercel/node'
 import {encrypt} from '../../../logic/encrypt'
-import Twitter from 'twitter'
+import jwt from 'jsonwebtoken'
 export default (req:NowRequest, res:NowResponse) =>{
     (()=>{
         const key = process.env.PASSWORD;
-        const token = req.body.token;
-        const secret = req.body.secret;
-        const result_token:{result:string,iv:string} = encrypt(key,token);
-        const result_secret:{result:string,iv:string} = encrypt(key,secret);
-        console.log(`もとのtoken=${token}\nもとのsecret=${secret}`);
-        console.log(`暗号化token=${result_token.result}\n暗号化secret=${result_secret.result}`)
-        // console.log('復号化decryptedToken='+Decrypt(key,result_token)+"\n復号化secret="+Decrypt(key,result_secret))
+        const json = {
+            "token":req.body.token,
+            "secret":req.body.secret
+        }
+        const token = jwt.sign(json,process.env.PRIVATE_KEY,{algorithm: "HS256",
+                                                             expiresIn: 1800
+                                                            })
+        const encrypted = encrypt(key,token)
+        console.log(`もとのtoken=${encrypted.result}\nもとのsecret=${encrypted.iv}`);
+
         res.setHeader('Set-Cookie',[
-                      `crypt_token=${result_token.result}; path=/mytweets; max_age=600; HttpOnly;`,
-                      `random_token=${result_token.iv}; path=/mytweets; max_age=600; HttpOnly;`,
-                      `crypt_secret=${result_secret.result}; path=/mytweets; max_age=600; HttpOnly;`,
-                      `random_secret=${result_secret.iv}; path=/mytweets; max_age=600; HttpOnly`
+                      `token=${encrypted.result}; path=/; max_age=1800; HttpOnly;`,
+                      `secret=${encrypted.iv}; path=/; max_age=1800; HttpOnly;`,
                     ]);    
-        return {token,secret}
+                    res.end()//res.send(responseで送れる)
+
     })()
 
-    res.end()//res.send(responseで送れる)
         
 }

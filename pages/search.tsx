@@ -1,7 +1,6 @@
 import SearchField from '../components/searchField';
 import Menubar from '../components/menubar';
 
-
 export default function Search():JSX.Element{
     // let token:firebase.auth.AuthCredential;
     // firebase.auth().getRedirectResult().then((result)=>{
@@ -17,9 +16,9 @@ export default function Search():JSX.Element{
             </div>
             <div className='main'>
             </div>
-            <footer>
+            <div className="footer">
                 <Menubar></Menubar>
-            </footer>
+            </div>
         </div>
     );
 }

@@ -9,7 +9,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-            <meta content=" width=device-width user-scalable=no"></meta>
+            <meta content="height=device-height width=device-width user-scalable=no"></meta>
+            <style>{`
+            #__next { min-height: 100% }
+          `}
+          </style>
         </Head>
         <body>
           <div>

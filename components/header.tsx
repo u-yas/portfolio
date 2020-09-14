@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import firebaseAuth from 'firebase/auth';
 import firebaseApp from 'firebase/app';
 import  UserContextComp, { useUser }  from '../context/userContext';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import { Icon, Button, makeStyles } from '@material-ui/core';
 import firebase from '../firebase/clientApp';
-import styles from '../scss/header.module.scss';
+import styles from '../scss/components/header.module.scss';
 
 
 // Propでそれを用意して受け取れるようにする

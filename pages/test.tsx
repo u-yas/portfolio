@@ -1,6 +1,7 @@
 import Menubar from '../components/menubar'
 import Header from '../components/header'
 import LoginWithTwitter from '../components/loginWithTwitter'
+import firebase from '../firebase/clientApp'
 //home画面、クソツイを登録するボタン、クソツイを閲覧する画面
 
 

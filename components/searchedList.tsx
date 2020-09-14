@@ -1,58 +1,26 @@
 import React, { Props, useState } from 'react'
-import ShareIcon from '@material-ui/icons/Share'
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+// import ShareIcon from '@material-ui/icons/Share'
+// import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+// import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import styles from '../scss/components/tweetList.module.scss';
 
 //JSONを受け取ったらそのjsonの一つを
-export type testJson={
-        tweetListData:{
-            id: number;
-            twitterId: string;
-            tweet: string;
-            text: string;
-            category: string;
-            createdAt: string;
-            fav: number;
-            nonfav: number;
-        };
-    }
 
-export type receiveJson={
-    tweetList: {
-        id:number;
-        twitterId: string;
-        tweet:string;
-        text: string;
-        category: string;
-        createdAt: string;
-        fav: number;
-        nonfav: number;
-    }[];
-}
+
+
 // const icon = require('../images/idcd3C87_400x400.png');
-export default function SearchedList(Props:testJson):JSX.Element{
+export default function SearchedList():JSX.Element{
         // JSON データの多重配列になっているもののいち要素を受け取る
         // Mapの個要素
         // 例
         // {
-        //     "twitterId":"hogefuga",
-        //     "photoURL":"pbs.twimg.com/hogehoge",
-        //     "category":"セクハラ"
-        //     "text" : "きみ可愛いねぐへへへｈ",
-        //     "fav" : 20,
-        //     "nonfav": 2,
-        //     "createdAt": 2020-08-04,
+        //     "tweetID":"hogefuga",
+        //     "category":"sexuhara"
+        //     
+        //     
+        //     
+        //     
         // }
-        const tweetInfo = Props.tweetListData;
-
-        const twitterId = tweetInfo.twitterId;
-        const tweet = tweetInfo.tweet;
-        const text = tweetInfo.text;
-        const category = tweetInfo.category;
-        const fav = tweetInfo.fav;
-        const nonfav = tweetInfo.nonfav;
-        const created = tweetInfo.createdAt;
 
         return(
             <div className={styles.parentTweetlist}>

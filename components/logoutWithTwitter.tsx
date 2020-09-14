@@ -1,24 +1,14 @@
 import React from 'react';
-import  UserContextComp, { useUser }  from '../context/userContext';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import { Icon, Button, makeStyles } from '@material-ui/core';
-import firebase from '../firebase/clientApp'
-
-type userProfile = {
-    name:string;
-    screenName:string;
-    photoURL:string;
-    token:string;
-    secret:string;
-  }
-
-
-
-export default function LogoutWithTwitter():JSX.Element{
+import styles from '../scss/components/loginWithTwitter.module.scss';
+import firebase from '../firebase/clientApp';
+import {FaTwitter} from 'react-icons/fa';
+export default function LoginWithTwitter():JSX.Element{
 
     return(
-        <div>
-                <Button variant="contained" color="secondary"  endIcon={<TwitterIcon></TwitterIcon>}>ログアウトする</Button>            
+        <div className={styles.buttonRoot}>
+            <div className={styles.twitter}>
+                <FaTwitter size='1.1em' className={styles.icon} />Twitterからログアウト
+            </div>
         </div>
     );
 }
